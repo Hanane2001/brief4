@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="/inscriptions.css">
+</head>
+<body>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="/inscreption" method="post">
+            <h1 class="h1">Create Account</h1>
+            <% if (typeof error !== 'undefined' && error.length > 0) { %>
+                <div style="color: red; font-weight: bold;" class="error-message"><%= error %></div>
+            <% } %>
+            <% if (typeof message !== 'undefined' && message.length > 0) { %>
+                <div style="color: rgb(11, 177, 11); font-weight: bold;" class="success-message"><%= message %></div>
+            <% } %>
+            <div class="NP">
+                <input type="text" name="nom" id="nom" placeholder="Nom">
+                <input type="text" name="prenom" id="prenom" placeholder="Prénom">
+            </div>
+            <input type="text" name="tele" id="tele" placeholder="Téléphone">
+            <input type="text" name="Adresse" id="Adresse" placeholder="Adresse">
+            <select id="profession" name="profession" placeholder="Profession">
+                <option value="freelance">Profession</option>
+                <option value="freelance">Freelance</option>
+                <option value="full-time">Full-time</option>
+                <option value="part-time">Part-time</option>
+                <option value="contract">Contract</option>
+                <option value="internship">Internship</option>
+                <option value="other">Other</option>
+            </select>
+            <select id="organisation" name="organisation" placeholder="Organisation">
+                <option value="non-profit">Organisation</option>
+                <option value="non-profit">Non-profit</option>
+                <option value="corporate">Corporate</option>
+                <option value="educational">Educational</option>
+                <option value="government">Government</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="email" name="email" id="email" placeholder="Email" />
+            <input type="password" name="password" id="password" placeholder="Password" />
+            <input type="submit" name="signUp" class="signUp" value="Sign Up">
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="/inscreption" method="post">
+            <h1 class="h1">Sign in</h1>
+            <% if (typeof error !== 'undefined' && error.length > 0) { %>
+                <div style="color: red; font-weight: bold;" class="error-message"><%= error %></div>
+            <% } %>
+            <input type="email" name="email" id="email" placeholder="Email" />
+            <input type="password" name="password" id="password" placeholder="Password" />
+            <a href="#">Forgot your password?</a>
+            <input type="submit" name="signIn" class="signIn" value="Sign In">
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/main.js"></script>
+</body>
+</html>
